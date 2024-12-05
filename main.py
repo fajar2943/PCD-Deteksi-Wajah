@@ -44,10 +44,10 @@ def save_box_image(image, image_processing, output_path):
     faces = face_cascade.detectMultiScale(image_processing, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
     # Menggambar kotak merah di setiap wajah yang terdeteksi
     for (x, y, w, h) in faces:
-        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
+        cv2.rectangle(image_processing, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
     # Menyimpan hasil gambar dalam format .jpg
-    cv2.imwrite(output_path, image)
+    cv2.imwrite(output_path, image_processing)
     print(f"Hasil disimpan di: {output_path}")
 
 def main():    
